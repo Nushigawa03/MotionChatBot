@@ -1,5 +1,6 @@
 import MDM
-model, diffusion, data, n_frames = MDM.Load()
+motion_length = 6.0
+model, diffusion, data, n_frames = MDM.Load(motion_length = motion_length)
 
 from fastapi import FastAPI
 app = FastAPI()
@@ -7,13 +8,6 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
-
-@app.get("/sum/")
-async def create_item(aa: float = 0.0,bb: float = 0.0):
-    rvalue = {}
-    rvalue["wa"] = aa + bb
-
-    return rvalue
 
 @app.get("/MDM/")
 async def create_item(text_prompt: str = "The person suddenly dances while walking."):

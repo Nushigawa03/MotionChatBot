@@ -4,12 +4,12 @@ ChatUnity/Packages
 ChatUnity/ProjectSettings
 ChatUnity/Temp
 ChatUnity/UserSettings
+ChatUnity/Assets/Toon
+ChatUnity/Assets/UnityChan
 MDM_API/__pycache__
 MDM_API/HumanML3D
 MDM_API/motion-diffusion-model
 MDM_API/result
 
-ChatUnity/Assets/Scenes.meta
-ChatUnity/Assets/Scripts.meta
-ChatUnity/Assets/Scenes/SampleScene.unity.meta
-ChatUnity/Assets/Scripts/APIClient.cs.meta
+ChatUnity/Assets/UnityChan.meta
+ChatUnity/Assets/Toon.meta

@@ -163,8 +163,6 @@ def Get_kwargs(text_prompt, n_frames):
     return model_kwargs
 
 def Generate(model, diffusion, data, model_kwargs, n_frames, batch_size=1, guidance_param = 2.5):
-    all_motions = []
-
     print(f'### Sampling')
 
     # add CFG scale to batch
@@ -200,7 +198,7 @@ def Generate(model, diffusion, data, model_kwargs, n_frames, batch_size=1, guida
                             jointstype='smpl', vertstrans=True, betas=None, beta=0, glob_rot=None,
                             get_rotations_back=False)
 
-    print(f"created {len(all_motions) * batch_size} samples")
+    print("created sample")
     
     return sample.cpu().numpy()
 
