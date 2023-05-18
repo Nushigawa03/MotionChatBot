@@ -4,12 +4,16 @@ ChatUnity/Packages
 ChatUnity/ProjectSettings
 ChatUnity/Temp
 ChatUnity/UserSettings
-ChatUnity/Assets/Toon
+ChatUnity/Assets/Fonts
 ChatUnity/Assets/UnityChan
+ChatUnity/Assets/TextMesh Pro
+ChatUnity/Assets/UniGLTF
+ChatUnity/Assets/VRM
+ChatUnity/Assets/VRM_model
+ChatUnity/Assets/VRMShaders
 MDM_API/__pycache__
 MDM_API/HumanML3D
 MDM_API/motion-diffusion-model
 MDM_API/result
 
-ChatUnity/Assets/UnityChan.meta
-ChatUnity/Assets/Toon.meta
+*.meta
