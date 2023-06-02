@@ -20,9 +20,11 @@ namespace MotionChat
             string text_prompt;
             var chatMotionReaction = await _ChatView.SendGPT(_APIClient);
 
-            text_prompt = chatMotionReaction.motion;
-
-            _Play.difMotion = await APIClient.GetMotion(text_prompt); // [1,22,3,frame]
+            if (chatMotionReaction is not null)
+            {
+                text_prompt = chatMotionReaction.motion;
+                _Play.difMotion = await APIClient.GetMotion(text_prompt); // [1,22,3,frame]
+            }
         }
     }
 }

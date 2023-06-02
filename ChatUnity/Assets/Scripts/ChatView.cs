@@ -11,21 +11,34 @@ namespace MotionChat
         [SerializeField] GameObject content;
         [SerializeField] GameObject chatNodePrefab;
         [SerializeField] TMP_InputField inputField;
+        [SerializeField] TMP_Text MotionPrompt;
 
         public async Task<ChatMotionReactionModel> SendGPT(APIClient _APIClient)
         {
             string user_message = inputField.text;
             inputField.text = string.Empty;
-            SendView("User:" + user_message);
+            SendChatView("User:" + user_message);
 
             var chatMotionReaction = await _APIClient.Chat(user_message);
-            SendView("ChatGPT:" + chatMotionReaction.message);
+            if (chatMotionReaction is not null)
+            {
+                SendChatView("ChatGPT:" + chatMotionReaction.message);
+                SendPromptView(chatMotionReaction.motion);
+            }
+            else
+            {
+                SendChatView("返答エラーが起きました。");
+            }
             return chatMotionReaction;
         }
-        void SendView(string text)
+        void SendChatView(string text)
         {
             var chatNode = Instantiate<GameObject>(chatNodePrefab, content.transform, false);
             chatNode.GetComponent<ChatNode>().init(text);
+        }
+        void SendPromptView(string text)
+        {
+            MotionPrompt.text = text;
         }
     }
 }
